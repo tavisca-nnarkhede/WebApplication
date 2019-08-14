@@ -1,0 +1,17 @@
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\WebApiTest.deps.json
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\WebApiTest.runtimeconfig.json
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\WebApiTest.runtimeconfig.dev.json
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\WebApiTest.dll
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\WebApplicationHi.dll
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\WebApplicationHi.pdb
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\obj\Debug\netcoreapp2.2\WebApiTest.csprojAssemblyReference.cache
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\obj\Debug\netcoreapp2.2\WebApiTest.csproj.CoreCompileInputs.cache
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\obj\Debug\netcoreapp2.2\WebApiTest.AssemblyInfoInputs.cache
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\obj\Debug\netcoreapp2.2\WebApiTest.AssemblyInfo.cs
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\obj\Debug\netcoreapp2.2\WebApiTest.csproj.CopyComplete
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\bin\Debug\netcoreapp2.2\WebApiTest.pdb
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\obj\Debug\netcoreapp2.2\WebApiTest.dll
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApiTest\obj\Debug\netcoreapp2.2\WebApiTest.pdb

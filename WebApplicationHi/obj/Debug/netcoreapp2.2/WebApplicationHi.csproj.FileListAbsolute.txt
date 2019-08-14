@@ -1,0 +1,14 @@
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\bin\Debug\netcoreapp2.2\WebApplicationHi.deps.json
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\bin\Debug\netcoreapp2.2\WebApplicationHi.runtimeconfig.json
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\bin\Debug\netcoreapp2.2\WebApplicationHi.runtimeconfig.dev.json
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\bin\Debug\netcoreapp2.2\WebApplicationHi.dll
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\bin\Debug\netcoreapp2.2\WebApplicationHi.pdb
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\obj\Debug\netcoreapp2.2\WebApplicationHi.csprojAssemblyReference.cache
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\obj\Debug\netcoreapp2.2\WebApplicationHi.csproj.CoreCompileInputs.cache
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\obj\Debug\netcoreapp2.2\WebApplicationHi.RazorAssemblyInfo.cache
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\obj\Debug\netcoreapp2.2\WebApplicationHi.RazorAssemblyInfo.cs
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\obj\Debug\netcoreapp2.2\WebApplicationHi.AssemblyInfoInputs.cache
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\obj\Debug\netcoreapp2.2\WebApplicationHi.AssemblyInfo.cs
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\obj\Debug\netcoreapp2.2\WebApplicationHi.RazorTargetAssemblyInfo.cache
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\obj\Debug\netcoreapp2.2\WebApplicationHi.dll
+C:\Users\dmandal\Desktop\WebApplicationHi\WebApplicationHi\obj\Debug\netcoreapp2.2\WebApplicationHi.pdb
