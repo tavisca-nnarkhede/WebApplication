@@ -16,9 +16,6 @@ pipeline{
             string(
               name: 'NETCORE_VERSION',
               defaultValue: '')
-            string(
-              name: 'DOCKER_IMAGE_NAME',
-              defaultValue: 'helloimage')
           }
   stages{
           stage('Build')
@@ -63,8 +60,8 @@ pipeline{
        }
       steps
       {
-        powershell 'docker build --tag ${DOCKER_IMAGE_NAME} .'
-        powershell 'docker run -p 4000:80 ${DOCKER_IMAGE_NAME}'
+        powershell 'docker build --tag helloimage .'
+        powershell 'docker run -p 4000:80 helloimage'
       }
     }
   }
