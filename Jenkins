@@ -45,9 +45,4 @@ pipeline{
       }
     }
   }
-  post{
-    always{
-      powershell 'echo Release...'
-    }
-  }
 }
