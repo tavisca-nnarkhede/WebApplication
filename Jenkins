@@ -23,7 +23,7 @@ pipeline{
         expression {params.CHOSEN_ACTION=='BUILD' ||  params.CHOSEN_ACTION=='TEST' ||  params.CHOSEN_ACTION=='PUBLISH'}
       }
       steps{
-        bat '''dotnet${NETCORE_VERSION} restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
+        powershell '''dotnet${NETCORE_VERSION} restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
         
               dotnet${NETCORE_VERSION} build ${SOLUTION_PATH_FILE} -p:CONFIGURATION=release -V:n'''
       }
@@ -33,7 +33,7 @@ pipeline{
         expression { params.CHOSEN_ACTION=='TEST' ||  params.CHOSEN_ACTION=='PUBLISH'}
       }
       steps{
-        bat 'dotnet${NETCORE_VERSION} test ${TEST_PROJECT_PATH}'
+        powershell 'dotnet${NETCORE_VERSION} test ${TEST_PROJECT_PATH}'
       }
     }
     stage('publish'){
@@ -41,13 +41,13 @@ pipeline{
         expression {params.CHOSEN_ACTION=='PUBLISH'}
       }
       steps{
-        bat 'dotnet publish WebApplicationHi/WebApplicationHi.csproj'
+        powershell 'dotnet publish WebApplicationHi/WebApplicationHi.csproj'
       }
     }
   }
   post{
     always{
-      bat 'echo Release...'
+      powershell 'echo Release...'
     }
   }
 }
