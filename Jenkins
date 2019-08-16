@@ -60,7 +60,7 @@ pipeline{
        }
       steps
       {
-        powershell 'docker build --tag=${DOCKER_IAMGE_NAME} -f Dockerfile .'
+        powershell 'docker build -t ${DOCKER_IAMGE_NAME} -f Dockerfile .'
         powershell 'docker run -p 4000:80 ${DOCKER_IMAGE_NAME}'
       }
     }
