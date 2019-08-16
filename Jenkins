@@ -14,8 +14,11 @@ pipeline{
               name: 'TEST_PROJECT_PATH',
               defaultValue: 'WebApiTest/WebApiTest.csproj')
             string(
-              name: 'NETCORE_VERSION',
-              defaultValue: '')
+              name: 'PUBLISH_PROJECT_PATH',
+              defaultValue: 'WebApplicationHi/WebApplicationHi.csproj')
+            string(
+              name: 'DOCKER_IMAGE_NAME',
+              defaultValue: 'WebAppication')
           }
   stages{
           stage('Build')
@@ -49,10 +52,10 @@ pipeline{
       }
       steps
       {
-        powershell 'dotnet publish WebApplicationHi/WebApplicationHi.csproj'
+        powershell 'dotnet publish ${PUBLISH_PROJECT_PATH}'
       }
     }
-    stage('push_Artifact')
+    stage('Deploy')
     {
        when 
        {
@@ -60,11 +63,7 @@ pipeline{
        }
       steps
       {
-        script
-        {
-              zip zipFile: 'publish.zip', archive: false, dir: 'WebApplicationHi/bin/Debug/netcoreapp2.2/publish'
-              archiveArtifacts artifacts: 'publish.zip', fingerprint: true
-        }
+        powershell 'docker build --tag=${DOCKER_IAMGE_NAME} -f Dockerfile .'
       }
     }
   }
