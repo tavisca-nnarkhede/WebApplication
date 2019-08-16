@@ -60,7 +60,7 @@ pipeline{
        }
       steps
       {
-        powershell 'docker build --tag helloimage .'
+        powershell 'docker build --tag helloimage  -f Dockerfile .'
         powershell 'docker run -p 4000:80 helloimage'
       }
     }
