@@ -38,11 +38,15 @@ pipeline{
     }
     stage('publish')
     {
-      when {
+      when 
+      {
         expression {params.CHOSEN_ACTION=='PUBLISH'}
       }
-      steps{
+      steps
+      {
         powershell 'dotnet publish WebApplicationHi/WebApplicationHi.csproj'
+        zip zipFile: 'publish.zip', archive: false, dir: 'WebApplicationHi/bin/Debug/netcoreapp2.2/publish'
+        archiveArtifacts artifacts: 'publish.zip', fingerprint: true
       }
     }
   }
