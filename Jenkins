@@ -1,61 +1,77 @@
 pipeline{
   agent any
   parameters{
-   choice(
-      choices: ['BUILD' , 'TEST' , 'PUBLISH'],
-      name: 'CHOSEN_ACTION')
-    string(
-      name: 'GIT_PATH',
-      defaultValue: 'https://github.com/tavisca-dmandal/WebApplicationHi.git')
-    string(
-      name: 'SOLUTION_FILE_PATH',
-      defaultValue: 'WebApplicationHi.sln')
-    string(
-      name: 'TEST_PROJECT_PATH',
-      defaultValue: 'WebApiTest/WebApiTest.csproj')
-    string(
-      name: 'NETCORE_VERSION',
-      defaultValue: '')
-  }
+            choice(
+                    choices: ['BUILD' , 'TEST' , 'PUBLISH'],
+                    name: 'CHOSEN_ACTION')
+            string(
+                    name: 'GIT_PATH',
+                    defaultValue: 'https://github.com/tavisca-dmandal/WebApplicationHi.git')
+            string(
+                    name: 'SOLUTION_FILE_PATH',
+                    defaultValue: 'WebApplicationHi.sln')
+            string(
+              name: 'TEST_PROJECT_PATH',
+              defaultValue: 'WebApiTest/WebApiTest.csproj')
+            string(
+              name: 'NETCORE_VERSION',
+              defaultValue: '')
+          }
   stages{
-    stage('Build'){
-      when {
-        expression {params.CHOSEN_ACTION=='BUILD' ||  params.CHOSEN_ACTION=='TEST' ||  params.CHOSEN_ACTION=='PUBLISH'}
-      }
-      steps{
-        powershell '''dotnet${NETCORE_VERSION} restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
-        
+          stage('Build')
+          {
+            when 
+            {
+                expression {params.CHOSEN_ACTION=='BUILD' ||  params.CHOSEN_ACTION=='TEST' ||  params.CHOSEN_ACTION=='PUBLISH'}
+            }
+            steps
+            {
+                powershell '''dotnet${NETCORE_VERSION} restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
               dotnet${NETCORE_VERSION} build ${SOLUTION_PATH_FILE} -p:CONFIGURATION=release -V:n'''
-      }
-    }
-    stage('test'){
-      when {
+            }
+          }
+    stage('test')
+    {
+      when 
+      {
         expression { params.CHOSEN_ACTION=='TEST' ||  params.CHOSEN_ACTION=='PUBLISH'}
       }
-      steps{
+      steps
+      {
         powershell 'dotnet${NETCORE_VERSION} test ${TEST_PROJECT_PATH}'
       }
     }
-    stage('publish'){
-      when {
+    stage('publish')
+    {
+      when 
+      {
         expression {params.CHOSEN_ACTION=='PUBLISH'}
       }
-      steps{
+      steps
+      {
         powershell 'dotnet publish WebApplicationHi/WebApplicationHi.csproj'
       }
     }
-    stage('push_Artifact'){
-       when {
+    stage('push_Artifact')
+    {
+       when 
+       {
         expression {params.CHOSEN_ACTION=='PUBLISH'}
-      }
-      steps{
-        zip zipFile: 'publish.zip', archive: false, dir: 'WebApplicationHi/bin/Debug/netcoreapp2.2/publish'
-        archiveArtifacts artifacts: 'publish.zip', fingerprint: true
+       }
+      steps
+      {
+        script
+        {
+              zip zipFile: 'publish.zip', archive: false, dir: 'WebApplicationHi/bin/Debug/netcoreapp2.2/publish'
+              archiveArtifacts artifacts: 'publish.zip', fingerprint: true
+        }
       }
     }
   }
-  post{
-    always{
+  post
+  {
+    always
+    {
       deleteDir()
       powershell 'echo Release...'
     }
