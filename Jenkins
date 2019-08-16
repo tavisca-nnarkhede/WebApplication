@@ -6,7 +6,7 @@ pipeline{
       name: 'CHOSEN_ACTION')
     string(
       name: 'GIT_PATH',
-      defaultValue: 'https://github.com/tavisca-nnarkhede/WebApplication.git')
+      defaultValue: 'https://github.com/tavisca-dmandal/WebApplicationHi.git')
     string(
       name: 'SOLUTION_FILE_PATH',
       defaultValue: 'WebApplicationHi.sln')
@@ -36,18 +36,28 @@ pipeline{
         powershell 'dotnet${NETCORE_VERSION} test ${TEST_PROJECT_PATH}'
       }
     }
-    stage('publish')
-    {
-      when 
-      {
+    stage('publish'){
+      when {
         expression {params.CHOSEN_ACTION=='PUBLISH'}
       }
-      steps
-      {
+      steps{
         powershell 'dotnet publish WebApplicationHi/WebApplicationHi.csproj'
+      }
+    }
+    stage('push_Artifact'){
+       when {
+        expression {params.CHOSEN_ACTION=='PUBLISH'}
+      }
+      steps{
         zip zipFile: 'publish.zip', archive: false, dir: 'WebApplicationHi/bin/Debug/netcoreapp2.2/publish'
         archiveArtifacts artifacts: 'publish.zip', fingerprint: true
       }
+    }
+  }
+  post{
+    always{
+      deleteDir()
+      powershell 'echo Release...'
     }
   }
 }
