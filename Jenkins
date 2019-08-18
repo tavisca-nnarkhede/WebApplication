@@ -65,7 +65,7 @@ pipeline{
 	docker build --tag=dockerimage .
 	docker login -u nikitanarkhede -p Nikit@1997
 	docker push tag dockerimage nikitanarkhede/webapplication
-	docker push nikitanarkhede/webappliaction
+	
 	'''
       }
     }
