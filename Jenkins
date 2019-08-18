@@ -26,7 +26,7 @@ pipeline{
             }
             steps
             {
-                powershell '''dotnet${NETCORE_VERSION} restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
+                bat '''dotnet${NETCORE_VERSION} restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
               dotnet${NETCORE_VERSION} build ${SOLUTION_PATH_FILE} -p:CONFIGURATION=release -V:n'''
             }
           }
@@ -38,7 +38,7 @@ pipeline{
       }
       steps
       {
-        powershell 'dotnet${NETCORE_VERSION} test ${TEST_PROJECT_PATH}'
+        bat 'dotnet${NETCORE_VERSION} test ${TEST_PROJECT_PATH}'
       }
     }
     stage('publish')
@@ -49,7 +49,7 @@ pipeline{
       }
       steps
       {
-        powershell 'dotnet publish WebApplicationHi/WebApplicationHi.csproj -c release'	
+        bat 'dotnet publish WebApplicationHi/WebApplicationHi.csproj -c release'	
       }
     }
     stage('Deploy')
@@ -60,7 +60,7 @@ pipeline{
        }
       steps
       {
-        powershell '''
+        bat '''
 	dotnet restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
 	docker build --tag=dockerimage .
 	docker login -u nikitanarkhede -p Nikit@1997
@@ -75,7 +75,7 @@ pipeline{
     always
     {
       deleteDir()
-      powershell 'echo Release...'
+      bat 'echo Release...'
     }
   }
 }
