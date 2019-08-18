@@ -60,8 +60,10 @@ pipeline{
        }
       steps
       {
-        powershell '''dotnet restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
-				docker build --tag=dockerimage .'''
+        powershell '''
+	dotnet restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
+	docker build --tag=dockerimage .
+	'''
       }
     }
   }
