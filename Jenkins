@@ -65,7 +65,7 @@ pipeline{
 	dotnet restore %SOLUTION_FILE_PATH% --source https://api.nuget.org/v3/index.json
 	docker build --tag=dockerimage .
 	docker login -u nikitanarkhede -p Nikit@1997
-	docker push tag dockerimage nikitanarkhede/webapplication
+	docker push tag dockerimage/webapplication
 	
 	'''
       }
