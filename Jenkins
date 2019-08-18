@@ -49,7 +49,7 @@ pipeline{
       }
       steps
       {
-        powershell 'dotnet publish WebApplicationHi/WebApplicationHi.csproj'
+        powershell 'dotnet publish WebApplicationHi/WebApplicationHi.csproj -c release'	
       }
     }
     stage('Deploy')
