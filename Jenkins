@@ -29,7 +29,7 @@ pipeline{
                 powershell '''dotnet${NETCORE_VERSION} restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
               dotnet${NETCORE_VERSION} build ${SOLUTION_PATH_FILE} -p:CONFIGURATION=release -V:n'''
             }
-          }
+    }
     stage('test')
     {
       when 
