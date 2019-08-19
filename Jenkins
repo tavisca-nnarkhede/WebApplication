@@ -54,7 +54,7 @@ pipeline{
     }
     stage('Deploy')
     {
-       when 
+      when 
        {
         expression {params.CHOSEN_ACTION=='PUBLISH'}
        }
