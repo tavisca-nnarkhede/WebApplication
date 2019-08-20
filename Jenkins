@@ -76,13 +76,7 @@ pipeline{
 	'''
       }
     }
-    post{
-    always
-    {
-      deleteDir()
-      powershell 'echo Release...'
-    }
-  }
+  
   }
 
 }
