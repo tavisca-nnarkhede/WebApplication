@@ -1,6 +1,7 @@
 pipeline{
   agent any
   parameters{
+  
             choice(
                     choices: ['BUILD' , 'TEST' , 'PUBLISH'],
                     name: 'CHOSEN_ACTION')
