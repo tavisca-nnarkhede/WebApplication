@@ -27,7 +27,7 @@ pipeline{
             steps
             {
                 powershell '''
-                
+                dotnet C:/sonar/SonarScanner.MSBuild.dll begin /k:"hello" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="906fa71698ee97391bf48b79f09fb262c170a456"
                 dotnet ${NETCORE_VERSION} restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json
                 dotnet ${NETCORE_VERSION} build ${SOLUTION_PATH_FILE} -p:CONFIGURATION=release -V:n
                 '''
@@ -43,7 +43,7 @@ pipeline{
       {
         powershell '''
         dotnet ${NETCORE_VERSION} test ${TEST_PROJECT_PATH}
-        
+dotnet C:/sonar/SonarScanner.MSBuild.dll  end /d:sonar.login="906fa71698ee97391bf48b79f09fb262c170a456"
         '''
       }
     }
