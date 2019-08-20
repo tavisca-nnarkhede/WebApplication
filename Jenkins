@@ -6,7 +6,7 @@ pipeline{
                     name: 'CHOSEN_ACTION')
             string(
                     name: 'GIT_PATH',
-                    defaultValue: 'https://github.com/tavisca-dmandal/WebApplicationHi.git')
+                    defaultValue: 'https://github.com/tavisca-nnarkhede/WebApplicationHi.git')
             string(
                     name: 'SOLUTION_FILE_PATH',
                     defaultValue: 'WebApplicationHi.sln')
